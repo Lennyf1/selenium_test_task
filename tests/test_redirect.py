@@ -6,6 +6,7 @@ from pages.redirect_page import RedirectPage
 
 @pytest.fixture
 def driver():
+    """Фикстура"""
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
@@ -13,6 +14,7 @@ def driver():
     driver.quit()
 
 def test_redirect_and_math(driver):
+    """Перенаправление на магическое путешествие"""
     redirect_page = RedirectPage(driver)
     driver.get("http://suninjuly.github.io/redirect_accept.html")
     

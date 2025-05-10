@@ -6,6 +6,7 @@ from pages.huge_form_page import HugeFormPage
 
 @pytest.fixture
 def driver():
+    """Фикстура"""
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
@@ -13,6 +14,7 @@ def driver():
     driver.quit()
 
 def test_huge_form_submission(driver):
+    """Тест-кейс Заполнение обширной формы"""
     form_page = HugeFormPage(driver)
     driver.get("https://suninjuly.github.io/huge_form.html")
     

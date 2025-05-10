@@ -6,6 +6,7 @@ from pages.captcha_page import CaptchaPage
 
 @pytest.fixture
 def driver():
+    """Фикстура"""
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
@@ -13,6 +14,7 @@ def driver():
     driver.quit()
 
 def test_captcha_solution(driver):
+    """Решение капчи для роботов"""
     captcha_page = CaptchaPage(driver)
     driver.get("http://suninjuly.github.io/math.html")
     

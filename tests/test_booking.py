@@ -6,6 +6,7 @@ from pages.booking_page import BookingPage
 
 @pytest.fixture
 def driver():
+    """Фикстура"""
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
@@ -13,6 +14,8 @@ def driver():
     driver.quit()
 
 def test_booking_house(driver):
+    """Тестирование страницы:
+    Бронирование дома"""
     booking_page = BookingPage(driver)
     driver.get("http://suninjuly.github.io/explicit_wait2.html")
     
